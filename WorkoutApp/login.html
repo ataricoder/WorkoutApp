@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log In</title>
+	<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+
+</head>
+<body>
+	<nav>
+  <img class= "logo" src= "assets/logo.png"/>
+  <li class= "nameTag">the workout app</li>
+  
+  <div class= "fullmenu">
+    <img class= "exit" src= "https://cdn4.iconfinder.com/data/icons/geomicons/32/672366-x-128.png"/>
+    <ul>
+    <a href="index.html"><li class="home"><img src="assets/home-logo.png" class="navLogo"></a>
+
+      <div class= "dropdown">
+            <ul>
+                <li><a href= "#">SUB HEADING 1</a></li>
+                <li><a href= "#">SUB HEADING 2</a></li>
+                <li><a href= "#">SUB HEADING 3</a></li>
+            </ul>
+          </div>
+      </li>
+        <a href="login.html"><li class="home"><img src="assets/profile-logo.png" class="navLogo"></a></li>
+
+      <li class="home"><img src="assets/heart-logo.png" class="navLogo"><a href="#"></a></li>  
+  </ul> 
+  </div>
+  <img class= "menu-icon" src= "http://citysmokehousesf.com/images/menu_icon.png"/>
+</nav>
+<div class="login">
+	<input id="txtEmail" type="email" placeholder="Email">
+	<input id="txtPassword" type="password" placeholder="password">
+	<button id="btnLogin" class="btn btn-action">Log In</button>
+	<button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+	<button id="btnLogout" class="btn btn-action hide">Log Out</button>
+</div>
+	
+
+
+
+
+</div>
+<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+
+<script type="text/javascript">
+	
+	var config = {
+    apiKey: "AIzaSyCJKDCt6N_-PUTW2WUDoqlK8X6-0JHLwfE",
+    authDomain: "workout-log-utcbc.firebaseapp.com",
+    databaseURL: "https://workout-log-utcbc.firebaseio.com",
+    projectId: "workout-log-utcbc",
+    storageBucket: "workout-log-utcbc.appspot.com",
+    messagingSenderId: "565408977376"
+  };
+  firebase.initializeApp(config);
+
+
+  //Sign Up
+  const txtEmail = document.getElementById('txtEmail');
+  const txtPassword = document.getElementById('txtPassword');
+  const btnLogin = document.getElementById('btnLogin');
+  const btnSignUp = document.getElementById('btnSignUp');
+  const btnLogout = document.getElementById('btnLogout');
+
+  btnLogin.addEventListener('click', e => {
+  	const email = txtEmail.value;
+  	const password = txtPassword.value;
+  	const auth = firebase.auth();
+  	const promise = auth.signInWithEmailAndPassword(email, password);
+
+  	promise.catch(e => console.log(e.message));
+  	promise.catch(e => text(e.message));
+  });
+
+  btnLogout.addEventListener('click', e => {
+  	firebase.auth().signOut();
+  })
+
+  btnSignUp.addEventListener('click', e => {
+  const email = txtEmail.value;
+  	const password = txtPassword.value;
+  	const auth = firebase.auth();
+  	const promise = auth.createUserWithEmailAndPassword(email, password);
+
+  	promise.catch(e => console.log(e.message));
+  });
+
+  firebase.auth().onAuthStateChanged(firebaseUser => {
+  	if(firebaseUser) {
+  		console.log(firebaseUser);
+  		btnLogout.classList.remove('hide');
+  	} else {
+
+
+  	console.log('not logged in');
+  	btnLogout.classList.add('hide');
+
+  	}
+
+
+  });
+
+
+
+
+  //Log In
+
+
+ 
+
+
+
+</script>
+</body>
+</html>

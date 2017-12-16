@@ -1,5 +1,6 @@
 body {
   background:#fafafa;
+
 }
 
 @font-face {
@@ -15,6 +16,49 @@ body {
 		 url("fonts/ADINEUE/adineue-bold-webfont.woff") format("woff"),
 		 url("fonts/ADINEUE/adineue-bold-webfont.ttf") format("truetype"),
 		 url("fonts/ADINEUE/adineue-bold-webfont.svg#svgFontName") format("svg")
+}
+.weather-icon {
+  height: 100px;
+}
+.login {
+  margin-top: 150px;
+}
+#quick-view {
+  color: white;
+  font-size: 3em;
+  font-size: calc(1em + 8vw);
+  margin: .4em 0 .2em 0;
+  text-shadow: .25rem .25rem 0 rgba(#000000, .75);
+}
+
+#quick-view div {
+  display: inline;
+}
+
+#grid {
+  margin: .5em 0;
+}
+
+#grid div {
+  background: white;
+  border-radius: .75em;
+  box-shadow: .25rem .25rem 0 rgba(#000000, .75);
+  color: black;
+  display: inline-block;
+  letter-spacing: .1em;
+  margin: .5em .4em;
+  overflow: hidden;
+  padding: 1.2rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Show/hide classes to toggle imperial and metric values */
+.show {
+  display: inline-table;
+}
+.hide {
+  display: none;
 }
 .form-group {
 	padding-bottom: 1em;
@@ -543,4 +587,5 @@ ul, menu, dir {
 }
 
    /*if the bottom padding gets too small the dropdowns will become very touchy*/
+
 

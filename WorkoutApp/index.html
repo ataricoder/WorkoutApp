@@ -3,16 +3,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <head>
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://use.fontawesome.com/9f2531d167.js"></script>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script src="js/index_js.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
-	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-	<script type="text/javascript" href="assets/jquery.simpleWeather.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<title>WorkoutApp</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://use.fontawesome.com/9f2531d167.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="js/index_js.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script type="text/javascript" href="assets/jquery.simpleWeather.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <title>WorkoutApp</title>
 </head>
 <body>
 <nav>
@@ -22,17 +22,17 @@
   <div class= "fullmenu">
     <img class= "exit" src= "https://cdn4.iconfinder.com/data/icons/geomicons/32/672366-x-128.png"/>
     <ul>
-	    <li class="home"><img src="assets/home-logo.png" class="navLogo"><a href="index.html"></a>
-			<div class= "dropdown">
-	          <ul>
-	              <li><a href= '#'>SUB HEADING 1</a></li>
-	              <li><a href= '#'>SUB HEADING 2</a></li>
-	              <li><a href= '#'>SUB HEADING 3</a></li>
-	          </ul>
-	        </div>
-	    </li>
-	    <li class="home"><img src="assets/profile-logo.png" class="navLogo"><a href="#"></a></li>
-	    <li class="home"><img src="assets/heart-logo.png" class="navLogo"><a href="#"></a></li>  
+      <a href="index.html"><li class="home"><img src="assets/home-logo.png" class="navLogo"></a>
+      <div class= "dropdown">
+            <ul>
+                <li><a href= "#">SUB HEADING 1</a></li>
+                <li><a href= "#">SUB HEADING 2</a></li>
+                <li><a href= "#">SUB HEADING 3</a></li>
+            </ul>
+          </div>
+      </li>
+      <a href="login.html"><li class="home"><img src="assets/profile-logo.png" class="navLogo"></a></li>
+      <li class="home"><img src="assets/heart-logo.png" class="navLogo"><a href="#"></a></li>  
   </ul> 
   </div>
   <img class= "menu-icon" src= "http://citysmokehousesf.com/images/menu_icon.png"/>
@@ -41,14 +41,33 @@
 <div class="main-content">
 
 <div class="left">
-	<div class="date">
-		<div id="map"></div>
+  <div class="date">
+    <div id="map"></div>
 
-	</div>
-	<div class="weather">
-		<div id="weather"></div>
-	</div>
-	<div id="timer">
+  </div>
+  <div class="weather">
+    <div id='weather-card' class='mdl-card mdl-shadow--8dp center-block'>
+      <div id='card-title' class='mdl-card__title mdl-card--border'>
+        <h1 class='mdl-card__title-text'></h1>
+      </div>
+      <div class='card-weather'>
+        <div class='icon-temp'>
+          <i class="weather-icon wi"></i>
+          <h1 class='temperature'>  <button class='scale-btn mdl-button'><h1>F</h1></button>
+          </h1>
+        </div>
+        <div id='description'>
+          <div id='type' class='desc-text'>
+          </div>
+          <div id='humidity' class='desc-text'>
+          </div>
+          <div id='wind' class='desc-text'>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="timer">
         <div id="display">00:00</div>
         <div id="buttons">
             <button id="start">Start</button>
@@ -63,89 +82,89 @@
 
 <div class="right">
 <div class="progress">
-	<div class="container">
+  <div class="container">
 
-	<br>
+  <br>
 
-	
-	<div class="jumbotron">
-		<h1 class="text-center">My Workout Log</h1>
-	</div>
+  
+  <div class="jumbotron">
+    <h1 class="text-center">WorkouT Log</h1>
+  </div>
 
-	<div class="row">
+  <div class="row">
 
-		
-		<div class="col-lg-12">
-			<div class="panel panel-success">
-				<div class="panel-heading">
-					
-				</div>
-				<div class="panel-body">
-				<table class="table">
-					<tr>
-						<th>Distance</th>
-						<th>Duration</th>
-						<th>Resistance</th>
-						<th>Heart Rate</th>
-						<th>Current Time</th>
-					</tr>
-				</table>	
-				</div>
-			</div>
-		
+    
+    <div class="col-lg-12">
+      <div class="panel panel-success">
+        <div class="jumbotron">
+          <h3 class="panel-title">WorkouT Log</h3>
+        </div>
+        <div class="panel-body">
+        <table class="table">
+          <tr>
+            <th>Distance</th>
+            <th>Duration</th>
+            <th>Resistance</th>
+            <th>Current Time</th>
+            <th>Heart Rate</th>
+          </tr>
+        </table>  
+        </div>
+      </div>
+    
 
 
 
-	<div class="row">
+  <div class="row">
 
-		
-		<div class="col-lg-12">
-			<div class="panel panel-success">
-				<div class="panel-heading">
-					<h3 class="panel-title">Add WOD</h3>
-				</div>
-				<div class="panel-body">
+    
+    <div class="col-lg-12">
+      <div class="panel panel-success">
+        <div class="jumbotron">
+          <h3 class="panel-title">Add WOD</h3>
+        </div>
+        <div class="panel-body">
+          
+          <form role="form">
+            <div class="form-group">
+              <label for="text">Distance:</label>
+              <input type="text" class="form-control" id="distance-input">
+            </div>
+            <div class="form-group">
+              <label for="text">Duration:</label>
+              <input type="email" class="form-control" id="duration-input">
+            </div>
+            <div class="form-group">
+              <label for="text">Resistance:</label>
+              <input type="text" class="form-control" id="resist-input">
+            </div>
+            <div class="form-group">
+              <label for="text">Heart Rate:</label>
+              <input type="number" class="form-control" id="heart-input">
+            </div>
 
-					
-					<form role="form">
-						<div class="form-group">
-							<label for="text">Distance:</label>
-							<input type="text" class="form-control" id="name-input">
-						</div>
-						<div class="form-group">
-							<label for="text">Duration:</label>
-							<input type="email" class="form-control" id="destination-input">
-						</div>
-						<div class="form-group">
-							<label for="text">Resistance:</label>
-							<input type="text" class="form-control" id="time-input">
-						</div>
-						<div class="form-group">
-							<label for="text">Heart Rate:</label>
-							<input type="number" class="form-control" id="frequency-input">
-						</div>
+            <button type="submit" class="btn btn-default" id="submit">Submit</button>
+          </form>
 
-						<div class="paddingButton2">
-						<button type="submit" class="btn btn-default" id="button submit"></button>
-						</div>
-				
-					</form>
-
-				</div>
-			</div>
-		</div>
+        </div>
+      </div>
+    </div>
 </div>
-	<div>
-		<ul class="documentation">
-			<ul class="bottom"><a class="docs" href="#">About Us ·</a></ul>
-			<ul class="bottom"><a class="docs" href="#">Contact ·</a></ul>
-			<ul class="bottom"><a class="docs" href="#">Jobs ·</a></ul>
-			<ul class="bottom"><a class="docs" href="#">API ·</a></ul>
-			<ul class="bottom"><a class="docs" href="#">Support</a></ul>
-		</ul>
-	</div>
-	<span class="copyright">© 2017 WorkoutApp</span>
+  <div>
+    <ul class="documentation">
+      <ul class="bottom"><a class="docs" href="#">About Us ·</a></ul>
+      <ul class="bottom"><a class="docs" href="#">Contact ·</a></ul>
+      <ul class="bottom"><a class="docs" href="#">Jobs ·</a></ul>
+      <ul class="bottom"><a class="docs" href="#">API ·</a></ul>
+      <ul class="bottom"><a class="docs" href="#">Support</a></ul>
+    </ul>
+  </div>
+  <span class="copyright">© 2017 WorkoutApp</span>
 </div>
+</div>
+</div>
+</div>
+  
 </div>
 </div>
 </div>
@@ -154,38 +173,8 @@
  <script type="text/javascript">
     // This is our API key
     
-    // Here we run our AJAX call to the YahooWeather API
     
-$("#submitBtn").on("click", function(){
-  event.preventDefault();
 
-  var city = $("#cityInput").val().trim();
-  var state = $("#stateInput").val();
-  var queryURL = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22"+city+"%2C%20"+state+"%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
-  
-  $.ajax({
-        url: queryURL,
-        method: "GET"
-      })
-      .done(function(data) {
-        $(".city").empty(); 
-        $(".temp").empty();
-        $(".maxMin").empty();
-        $(".forecast").empty();
-        $(".imageWeather").empty();
-
-        var varCode = data.query.results.channel.item.forecast[0].code
-
-
-        $(".city").append(data.query.results.channel.item);
-        $(".temp").text("Temperature: " + data.query.results.channel.item.condition.temp + " (°F)");
-        $(".maxMin").append("Max: " + data.query.results.channel.item.forecast[0].high + " Min: " + data.query.results.channel.item.forecast[0].low);
-        $(".forecast").text("Forecast: " + data.query.results.channel.item.condition.text);
-        $(".imageWeather").attr("src", "https://s.yimg.com/zz/combo?a/i/us/we/52/" + varCode + ".gif");
-        
-      });
-
-})
 
 
 
@@ -204,67 +193,67 @@ var config = {
   var database = firebase.database();
 
   // on click button
-  	$("#submit").click(function(){
-  		var name = $("#name-input").val().trim();
-  		var destination = $("#destination-input").val().trim();
-  		var time = $("#time-input").val().trim();
-  		var frequency = $("#frequency-input").val().trim();
+    $("#submit").click(function(){
+      var name = $("#name-input").val().trim();
+      var destination = $("#destination-input").val().trim();
+      var time = $("#time-input").val().trim();
+      var frequency = $("#frequency-input").val().trim();
 
-  		//pushing input into firebase
-  		database.ref().push({
-  			name: name,
-  			destination: destination,
-  			time: time,
-  			frequency: frequency
-  		})
-	  		
-	  		$("input").val('');
-	  		return false;
+      //pushing input into firebase
+      database.ref().push({
+        name: name,
+        destination: destination,
+        time: time,
+        frequency: frequency
+      })
+        
+        $("input").val('');
+        return false;
 }); 
 
   
   database.ref().on("child_added", function(childSnapshot){
-  		// pull the data
-  		var name = childSnapshot.val().name;
-  		var destination = childSnapshot.val().destination;
-  		var time = childSnapshot.val().time;
-  		var frequency = childSnapshot.val().frequency;
-	
-			console.log("Name: " + name);
-			console.log("Destination: " + destination);
-			console.log("Time: " + time);
-			console.log("Frequency: " + frequency);
-			console.log(moment().format("hh:mm"));
+      // pull the data
+      var name = childSnapshot.val().name;
+      var destination = childSnapshot.val().destination;
+      var time = childSnapshot.val().time;
+      var frequency = childSnapshot.val().frequency;
+  
+      console.log("Name: " + name);
+      console.log("Destination: " + destination);
+      console.log("Time: " + time);
+      console.log("Frequency: " + frequency);
+      console.log(moment().format("hh:mm"));
 
-		
-		var firstTimeConverted = moment(time,"hh:mm").subtract(1, "years");
-		console.log(firstTimeConverted);
-		
-		var currentTime = moment();
-		console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-		
-		var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-		console.log("DIFFERENCE IN TIME: " + diffTime);
-		
-		var theRemainder = diffTime % frequency;
-		console.log(theRemainder);
-		
-		var theMinutesTillTrain = frequency - theRemainder;
-		console.log("MINUTES TILL TRAIN: " + theMinutesTillTrain);
-		
-		var nextTrain = moment().add(theMinutesTillTrain, "minutes").format("hh:mm");
-		console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));	
+    
+    var firstTimeConverted = moment(time,"hh:mm").subtract(1, "years");
+    console.log(firstTimeConverted);
+    
+    var currentTime = moment();
+    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+    
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    console.log("DIFFERENCE IN TIME: " + diffTime);
+    
+    var theRemainder = diffTime % frequency;
+    console.log(theRemainder);
+    
+    var theMinutesTillTrain = frequency - theRemainder;
+    console.log("MINUTES TILL TRAIN: " + theMinutesTillTrain);
+    
+    var nextTrain = moment().add(theMinutesTillTrain, "minutes").format("hh:mm");
+    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));  
 
-	//display in the top table  
-	var trainRow = $("<tr/>").attr("data-name", name);
-	  trainRow.append($("<td/> ").text(name));
-	  trainRow.append($("<td/> ").text(destination));
-	  trainRow.append($("<td/> ").text(frequency));
-	  trainRow.append($("<td/> ").text(nextTrain)); 
-	  trainRow.append($("<td/> ").text(theMinutesTillTrain));
-	  $(".table").append(trainRow);
+  //display in the top table  
+  var trainRow = $("<tr/>").attr("data-name", name);
+    trainRow.append($("<td/> ").text(name));
+    trainRow.append($("<td/> ").text(destination));
+    trainRow.append($("<td/> ").text(frequency));
+    trainRow.append($("<td/> ").text(nextTrain)); 
+    trainRow.append($("<td/> ").text(theMinutesTillTrain));
+    $(".table").append(trainRow);
 
-});	
+}); 
 
 
     window.onload = function() {
@@ -356,50 +345,111 @@ var config = {
             return minutes + ":" + seconds;
         }
     };
+$(document).ready(function() {
+    getLocationAndWeather('Imperial');
+    $('.scale-btn').click(switchScale);
+});
 
-
-
-
-
-    if ("geolocation" in navigator) {
-  $('.js-geolocation').show(); 
-} else {
-  $('.js-geolocation').hide();
+function switchScale() {
+    if ($('.scale-btn>h1').text() === 'C') {
+        $('.scale-btn>h1').text('F');
+        $('.scale-btn').blur();
+        getLocationAndWeather('Imperial');
+    } else {
+        $('.scale-btn>h1').text('C');
+        $('.scale-btn').blur();
+        getLocationAndWeather('Metric');
+    }
 }
 
-/* Where in the world are you? */
-$('.js-geolocation').on('click', function() {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
-  });
-});
-
-/* 
-* Test Locations
-* Austin lat/long: 30.2676,-97.74298
-* Austin WOEID: 2357536
-*/
-$(document).ready(function() {
-  loadWeather('Seattle',''); //@params location, woeid
-});
-
-function loadWeather(location, woeid) {
-  $.simpleWeather({
-    location: location,
-    woeid: woeid,
-    unit: 'f',
-    success: function(weather) {
-      html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-      html += '<li>'+weather.alt.temp+'&deg;C</li></ul>';  
-      
-      $("#weather").html(html);
-    },
-    error: function(error) {
-      $("#weather").html('<p>'+error+'</p>');
+function getLocationAndWeather(scale) {
+  console.log("Get location and weather");
+  // get location via IP address:
+  $.getJSON("https://ipapi.co/json", function(response) {
+      console.log(response);
+      getWeather(response.postal, scale);
     }
-  });
+  );
+}
+
+function getWeather(location, scale) {
+    var weather = {};
+    var key = 'GBZ6Sb7dMy4nMXyuS8AYCwFiJ4KxnRKD';
+  
+    // First we need the location key
+    $.getJSON(
+      'https://dataservice.accuweather.com/locations/v1/postalcodes/search', {
+        apikey: key,
+        q: location
+    }, function (loc_results) {
+          // Then use it to fetch weather results
+          var weather_url = 'https://dataservice.accuweather.com/currentconditions/v1/' + loc_results[0].Key;
+          $.getJSON(weather_url, {
+            apikey: key,
+            details: 'true'
+        }, function(results) {
+            var wthr = {
+                city: loc_results[0]['LocalizedName'],
+                wind_speed: results[0]['Wind']['Speed'][scale]['Value'],
+                wind_unit: results[0]['Wind']['Speed'][scale]['Unit'],
+                wind_dir: results[0]['Wind']['Direction']['Localized'],
+                type: results[0]['WeatherText'],
+                humidity: results[0]['RelativeHumidity'],
+                temp: results[0]['Temperature'][scale]["Value"]
+            };
+            setWeatherNodes(wthr, scale);
+        });     
+    });
+}
+
+function setWeatherNodes(weather, scale) {
+    $('.mdl-card__title-text').text(weather['city']);
+    $('#type').text(weather['type']);
+    $('#humidity').text('Humidity: ' + weather['humidity'] + '%');
+    
+    $('#wind').text('Wind: ' + weather['wind_speed'] + ' '
+                    + weather['wind_unit'] + ' ' 
+                    + weather['wind_dir']);
+      
+    $('.temperature').contents().filter(function() {
+        return this.nodeType === Node.TEXT_NODE;
+    })[0].nodeValue = parseInt(weather['temp']) + '\u00B0';
+  
+    setWeatherTypeNodes(weather['type']);
+}
+
+function setWeatherTypeNodes(wType) {
+  // Change Partly Sunny to Sunny, etc.
+  wType = (wType.indexOf("sunny") !== -1 ? "Sunny" : wType);
+  wType = (wType.indexOf("cloudy") !== -1 ? "Cloudy" : wType);
+  
+  var bgUrls = {
+    Sunny: 'https://static.pexels.com/photos/478939/pexels-photo-478939.jpeg',
+    Clear: 'https://static.pexels.com/photos/147485/pexels-photo-147485.jpeg',
+    Drizzle: 'https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg',
+    Rain: 'https://static.pexels.com/photos/1553/glass-rainy-car-rain.jpg',
+    Cloudy: 'https://www.google.com/search?q=sunny+icon&rlz=1C5CHFA_enUS764US764&tbm=isch&source=iu&ictx=1&fir=Klh1gLinpkBAPM%253A%252CvyAkYH4zC8nvuM%252C_&usg=__iu0Sj3abFGwp31xJVfH7ZffX-ZQ%3D&sa=X&ved=0ahUKEwi1jpH-i4_YAhVh4oMKHTUGCYkQ9QEIKzAA#imgrc=Klh1gLinpkBAPM:',
+    Mist: 'https://static.pexels.com/photos/5106/forest-trees-fog-foggy-large.jpg',
+    Thunderstorm: 'https://static.pexels.com/photos/799/city-lights-night-clouds.jpg',
+    Snow: 'https://static.pexels.com/photos/5254/cold-snow-nature-sunny.jpg'
+  };
+  
+  var icons = {
+    Sunny: ['wi-day-sunny', '#FDD835'],
+    Rain: ['wi-rain', '#2196F3'],
+    Cloudy: ['wi-cloudy', '#CFD8DC'],
+    Mist: ['wi-fog', '#90A4AE'],
+    Thunderstorm: ['wi-thunderstorm', '#37474F'],
+    Snow: ['wi-snow', '#B2EBF2'],
+    Drizzle: ['wi-sprinkle', '#2196F3']
+  };
+  
+  $('.weather-icon').css({'background': '#fafafa url('+bgUrls[wType]+')'});
+  
+  //Change the icon
+  $('.weather-icon').removeClass('wi-day-sunny wi-rain wi-cloudy wi-fog wi-thunderstorm wi-snow');
+  $('.weather-icon').addClass(icons[wType][0]);
+  $('.weather-icon').css({'color': icons[wType][1]});
 }
 
 </script>
