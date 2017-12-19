@@ -12,6 +12,10 @@
   <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <script type="text/javascript" href="assets/jquery.simpleWeather.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/bootstrap-slider.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style/style.css">
@@ -35,15 +39,22 @@
             <img src="assets/profile-logo.png" class="navLogo">
         </a>
         </li>
-        <li class="home">
-          <img src="assets/heart-logo.png" class="navLogo">
-          <a href="#"></a>
-        </li>
       </ul>
     </div>
-    <img class="menu-icon" src="http://citysmokehousesf.com/images/menu_icon.png" />
+    <img class="menu-icon" src="http://citysmokehousesf.com/images/menu_icon.png">
   </nav>
   <div class="container">
+    <!-- <div class="row">
+      <div class="col-md-12">
+        <div class="login">
+          <input id="txtEmail" type="email" placeholder="Email">
+          <input id="txtPassword" type="password" placeholder="password">
+          <button id="btnLogin" class="btn btn-action">Log In</button>
+          <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+          <button id="btnLogout" class="btn btn-action hide">Log Out</button>
+        </div>
+      </div>
+    </div> -->
     <div class="row">
       <div class="col-md-6">
         <!-- begin weather -->
@@ -80,24 +91,24 @@
         <div class="row">
 
           <div id="timer">
-            <div id="display">00:00</div>
             <div id="buttons">
               <button id="start">Start</button>
               <button id="stop">Stop</button>
               <button id="reset">Reset</button>
               <button id="lap">Lap</button>
             </div>
+             <div id="display">00:00</div>
             <div id="laps"></div>
           </div>
         </div>
       </div>
- 
-    <!-- begin map div -->
+
+      <!-- begin map div -->
       <div class="col-md-6">
         <div id="map-canvas">
         </div>
       </div>
-        </div>
+    </div>
     <!-- end map div -->
     <div class="row">
       <div class="col-md-12">
@@ -108,9 +119,9 @@
     <div class="row">
       <div class="col-md-6">
         <div class="panel panel-success">
-<div>
-  <h3 class="panel-title">Log Your Workout</h3>
-</div>
+          <div>
+            <h3 class="panel-title">Log Your Workout</h3>
+          </div>
           <div class="panel-body">
 
             <form role="form">
@@ -137,7 +148,7 @@
           </div>
         </div>
       </div>
-<!-- break between log divs -->
+      <!-- break between log divs -->
       <div class="col-md-6">
         <div class="panel panel-success">
           <div>
@@ -165,7 +176,25 @@
             <h3 class="panel-title">Challlenge</h3>
           </div>
           <div class="panel-body">
- 
+            <div>
+              <input id="ex13" type="text" data-slider-ticks="[0, 50, 100]" data-slider-ticks-snap-bounds="50" data-slider-ticks-labels='["Easy", "Medium", "Hard"]'
+              />
+              <br>
+              <br>
+              <button id="SubmitBtn">Start Workout!</button>
+              <br>
+              <br>
+            </div>
+            <div id="res">
+              <table class="table table-hover hide" id="result">
+                <tr>
+                  <th>Excersise</th>
+                  <th>Sets</th>
+                  <th>Reps</th>
+                </tr>
+
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -173,7 +202,8 @@
   </div>
 
 </body>
-  <script src="js/index_js.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJKDCt6N_-PUTW2WUDoqlK8X6-0JHLwfE&callback=initMap">
-    </script>
+<script src="js/index_js.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJKDCt6N_-PUTW2WUDoqlK8X6-0JHLwfE&callback=initMap">
+</script>
+
 </html>

@@ -338,4 +338,64 @@ window.initMap = function () {
     });
   }
 }
+
+// challenge routines js
+$("#ex13").slider({
+  ticks: [0, 50, 100],
+  ticks_labels: ["Easy", "Medium", "Hard"],
+  ticks_snap_bounds: 50
+});
+
+var a = ["Push ups", "Jump Rope", "Air Squats", "Sit-ups", "Stationary Bike", "Squats", "Burpees", "Planks"];
+var repsDif = ["10", "5", "12", "10", "8", "10", "5"];
+
+//Fisher–Yates shuffle algorithm:
+function shuffle() {
+  var j, x, i;
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    x = a[i];
+    a[i] = a[j];
+    a[j] = x;
+  }
+}
+
+function shuffle2() {
+  var j, x, i;
+  for (i = repsDif.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    x = repsDif[i];
+    repsDif[i] = repsDif[j];
+    repsDif[j] = x;
+  }
+}
+
+$("#SubmitBtn").on("click", function () {
+  $("#result").removeClass("hide");
+  $("#result > tbody").empty().append("<tr><th>" + "Excercise" + "</th><th>" + "Sets" + "</th><th>" + "Reps" + "</th></tr>")
+  var level = $("#ex13").val();
+  shuffle(a);
+  shuffle2(repsDif);
+
+  if (level == 50) {
+    var dif = 5;
+    var sets = ["3"];
+  } if (level < 50) {
+    var dif = 3;
+    sets = ["2"];
+  } if (level > 50) {
+    var dif = 7;
+    sets = ["4"];
+  }
+
+  for (var i = 0; i < dif; i++) {
+    var exer = a[i];
+    var reps = repsDif[i];
+    var set = sets[0];
+    $("#result > tbody").append("<tr><td>" + exer + "</td><td>" + set + "</td><td>" + reps + "</td></tr>")
+  };
+});			
+
+
+
 //end document ready
