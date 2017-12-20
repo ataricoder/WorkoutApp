@@ -338,4 +338,76 @@ window.initMap = function () {
     });
   }
 }
+
+// challenge routines js
+$("#ex13").slider({
+    ticks: [0, 1, 2, 3],
+    ticks_labels: ["Cardio", "FatLoss", "Abs&Core", "Bodyweight"],
+    ticks_snap_bounds: 50
+});
+
+$("#ex8").slider({
+  tooltip: 'always'
+});
+
+var cardio = ["Pushups", "Jump Rope", "Air Squats", "Sit-ups", "Stationary Bike", "Squats", "Burpees", "Planks"];
+var loss = ["Pushups", "Inverted Rows", "Leg Lifts", "Floor Crunch", "Plank", "Front Squat", "Kettlebell Swing", "Barbell Row"];
+var abs = ["Planks", "Side Plank", "Lying March", "Plate Passes", "Squats", "Burpees", "Walk Ups"];
+var body = ["Incline Barbell", "Bench Press", "Dumbbell Bench Press", "Wide Grip Pullup", "Bent-Over Barbell Row", "Seated Dumbbell Press", "Barbell Curl"];
+var repsDif = ["10", "5", "12", "10", "8", "10", "5"];
+var a = [];
+
+//Fisher–Yates shuffle algorithm:
+function shuffle(a) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }       
+        }
+
+$("#SubmitBtn").on("click", function(){ 
+    
+    $("#result").removeClass("hide"); 
+    $("#result > tbody").empty().append("<tr><th>" + "Excercise" + "</th><th>" + "Sets" + "</th><th>" + "Reps"+ "</th></tr>")
+    var level = $("#ex8").val();
+    var exerInput = $("#ex13").val();
+      if (exerInput == "0" ){
+        var a = cardio;
+        shuffle(cardio);
+      } if (exerInput == "1" ){
+        var a = loss;
+        shuffle(loss);
+      } if (exerInput == "2" ){
+        var a = abs;
+        shuffle(abs);
+      } if (exerInput == "3"){
+        var a = body;
+        shuffle(body);
+      }
+    
+    if (level >= 4 & level < 7){
+      var dif = 5;
+      var sets = ["3"];
+    } if (level <= 3){
+      var dif = 3;
+      sets = ["2"];
+    } if (level >= 7){
+      var dif = 7;
+      sets = ["4"];
+    }
+
+    shuffle(repsDif);
+    for (var i = 0; i < dif; i++) {
+      var exer = a[i];
+      var set = sets[0];
+      var reps = repsDif[i];
+      $("#result > tbody").append("<tr><td>" + exer + "</td><td>" + set + "</td><td>" + reps + "</td></tr>")
+    };
+});     
+
+
+
 //end document ready
