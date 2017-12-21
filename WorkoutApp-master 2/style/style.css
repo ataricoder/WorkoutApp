@@ -163,6 +163,7 @@ button:active {
 
 h1 {
   font-family: "adineue-bold";
+  margin-top: 0px;
 }
 
 h3 {
@@ -433,6 +434,10 @@ i {
   height: 250px;
 }
 
+#buttons {
+  padding-left: 15px;
+}
+
 div#display{
   font-size: 25px;
   padding-left: 20px;
@@ -441,6 +446,7 @@ div#display{
 .weather {
   background-color: #ffffff;
   margin-top: 20px;
+  padding-left: 15px;
   border: 1px solid rgba(0, 0, 0, .0975);
   border-radius: 10px;
   height: 250px;
@@ -710,3 +716,13 @@ dir {
 
 
 /*if the bottom padding gets too small the dropdowns will become very touchy*/
+
+/*****SLIDER BAR****/
+
+.slider.slider-horizontal{
+  width:400px; /* sample value - set it as you like*/
+}
+
+#slider {
+  padding-left: 40px;
+}

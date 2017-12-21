@@ -41,7 +41,7 @@
         </li>
       </ul>
     </div>
-    <img class="menu-icon" src="http://citysmokehousesf.com/images/menu_icon.png">
+    <!-- <img class="menu-icon" src="https://citysmokehousesf.com/images/menu_icon.png"> -->
   </nav>
   <div class="container">
     <!-- <div class="row">
@@ -68,7 +68,7 @@
                 <div class='icon-temp'>
                   <i class="weather-icon wi"></i>
                   <h1 class='temperature'>
-                    <button class='scale-btn mdl-button'>
+                    <button id = "tempScale" class='scale-btn mdl-button'>
                       <h1>F</h1>
                     </button>
                   </h1>
@@ -176,23 +176,27 @@
             <h3 class="panel-title">Challlenge</h3>
           </div>
           <div class="panel-body">
-            <div>
-              <input id="ex13" type="text" data-slider-ticks="[0, 50, 100]" data-slider-ticks-snap-bounds="50" data-slider-ticks-labels='["Easy", "Medium", "Hard"]'
-              />
-              <br>
-              <br>
-              <button id="SubmitBtn">Start Workout!</button>
-              <br>
-              <br>
-            </div>
-            <div id="res">
+            <br>
+            <div id="slider">
+              <h5>Select Workout</h5>
+              <input id="ex13" type="text" data-slider-step="1" data-slider-tooltip="hide"  data-slider-ticks="[0, 1, 2, 3]" data-slider-ticks-snap-bounds="50" data-slider-ticks-labels='["Light", "Moderate", "Vigorous", "High Rate"]'/>
+            
+              <br><br>
+            
+              <h5>Select intensity</h5>
+              <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="5"/>
+            
+              <br><br>      
+                <button id="SubmitBtn">Start Workout!</button>
+              <br><br>
+            </div>  
+            <div id="res"> 
               <table class="table table-hover hide" id="result">
-                <tr>
-                  <th>Excersise</th>
-                  <th>Sets</th>
-                  <th>Reps</th>
-                </tr>
-
+                  <tr>
+                    <th>Excersise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                  </tr>
               </table>
             </div>
           </div>

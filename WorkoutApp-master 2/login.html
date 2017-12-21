@@ -9,7 +9,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
-  
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
     crossorigin="anonymous">
 
@@ -108,16 +108,16 @@
 
     <!-- JavaScript -->
     <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCJKDCt6N_-PUTW2WUDoqlK8X6-0JHLwfE",
-      authDomain: "workout-log-utcbc.firebaseapp.com",
-      databaseURL: "https://workout-log-utcbc.firebaseio.com",
-      projectId: "workout-log-utcbc",
-      storageBucket: "workout-log-utcbc.appspot.com",
-      messagingSenderId: "565408977376"
-    };
-    firebase.initializeApp(config);
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCJKDCt6N_-PUTW2WUDoqlK8X6-0JHLwfE",
+        authDomain: "workout-log-utcbc.firebaseapp.com",
+        databaseURL: "https://workout-log-utcbc.firebaseio.com",
+        projectId: "workout-log-utcbc",
+        storageBucket: "workout-log-utcbc.appspot.com",
+        messagingSenderId: "565408977376"
+      };
+      firebase.initializeApp(config);
 
       firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -156,7 +156,7 @@
         });
 
         $("form").trigger("reset");
-        
+
 
       });
 
@@ -211,15 +211,15 @@
           var errorMessage = error.message;
         });
 
-        firebase.auth().onAuthStateChanged(firebaseUser => {
-        if(firebaseUser) {
+      firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
           console.log(firebaseUser);
-        $("#message").text("logged in");
+          $("#message").text("logged in");
           btnLogout.classList.remove('hide');
         } else {
-        console.log('not logged in');
-        $("#message").text("not logged in");
-        btnLogout.classList.add('hide');
+          console.log('not logged in');
+          $("#message").text("not logged in");
+          btnLogout.classList.add('hide');
         }
       });
     </script>

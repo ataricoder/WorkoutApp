@@ -27,7 +27,7 @@ $(document).ready(function() {
     });
 }); 
 
-var queryURL = "http://api.airvisual.com/v1/nearest?key=DaHqdonP4rSRvKgZQ";
+var queryURL = "https://api.airvisual.com/v1/nearest?key=DaHqdonP4rSRvKgZQ";
 
 $.ajax({
   url: queryURL,
@@ -263,18 +263,20 @@ function setWeatherNodes(weather, scale) {
 function setWeatherTypeNodes(wType) {
   // Change Partly Sunny to Sunny, etc.
   wType = (wType.indexOf("sunny") !== -1 ? "Sunny" : wType);
+  wType = (wType.indexOf("clear") !== -1 ? "Clear" : wType);
   wType = (wType.indexOf("cloudy") !== -1 ? "Cloudy" : wType);
 
   var bgUrls = {
-    Sunny: 'https://static.pexels.com/photos/478939/pexels-photo-478939.jpeg',
-    Clear: 'https://static.pexels.com/photos/147485/pexels-photo-147485.jpeg',
-    Drizzle: 'https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg',
-    Rain: 'https://static.pexels.com/photos/1553/glass-rainy-car-rain.jpg',
-    Cloudy: 'https://www.google.com/search?q=sunny+icon&rlz=1C5CHFA_enUS764US764&tbm=isch&source=iu&ictx=1&fir=Klh1gLinpkBAPM%253A%252CvyAkYH4zC8nvuM%252C_&usg=__iu0Sj3abFGwp31xJVfH7ZffX-ZQ%3D&sa=X&ved=0ahUKEwi1jpH-i4_YAhVh4oMKHTUGCYkQ9QEIKzAA#imgrc=Klh1gLinpkBAPM:',
-    Mist: 'https://static.pexels.com/photos/5106/forest-trees-fog-foggy-large.jpg',
-    Thunderstorm: 'https://static.pexels.com/photos/799/city-lights-night-clouds.jpg',
-    Snow: 'https://static.pexels.com/photos/5254/cold-snow-nature-sunny.jpg'
+    Sunny: 'assets/sunny.png',
+    Clear: 'assets/clear.png',
+    Drizzle: 'assets/drizzle.png',
+    Rain: 'assets/rain.png',
+    Cloudy: 'assets/cloudy.png',
+    Mist: 'assets/mist.png',
+    Thunderstorm: 'assets/storm.png',
+    Snow: 'assets/snow.png'
   };
+
 
   var icons = {
     Sunny: ['wi-day-sunny', '#FDD835'],
